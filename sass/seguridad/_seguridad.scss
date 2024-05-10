@@ -1,0 +1,43 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.seguridad{
+    background-image: url("../../img/wave.svg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    height: 100%;
+    margin-top: 50px;
+    
+
+    .seguridad__container{
+        padding: 200px 0 50px 0;
+        h2{
+            text-align: center;
+            color: v.$blanco;
+        }
+        .seguridad__grid{
+            @include m.grid(20px,2,1);
+            place-items: center;
+
+            @include m.telefono{
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+        .listado{            
+            .listado__elemento{
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                background-color: v.$blanco;
+                margin-top: 20px;
+                padding: 20px;
+                transition: transform 0.3s ease;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+}

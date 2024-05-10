@@ -1,0 +1,97 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+.header {
+    background-image: url("../../img/header_bg.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+    padding: 50px 0;  
+
+    .header__container {
+        .barra__header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include m.telefono {
+                flex-direction: column;
+            }
+            .logo{
+                .img__logo{
+                    width: 200px;
+                }
+            }
+            
+        }
+
+        .header__grid{
+            @include m.grid(50px,2,1);
+            place-content: center;
+            @include m.telefono{
+                gap: 20px;
+                align-self: unset;
+                align-items: center;
+            }
+            .header__texto{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+    
+
+                .header__heading{
+                    font-size: 45px;
+                }
+                @include m.telefono{
+                    .header__heading{
+                        font-size: 33px;
+                    }
+                }
+    
+                .header__boton{
+                    background-color: v.$morado;
+                    color: v.$blanco;
+                    text-align: center;
+                    padding: 15px;
+                    width: 200px;
+                    cursor: pointer;
+    
+                    @include m.telefono{
+                        width: 100%;
+                    }
+                }
+    
+            }
+    
+            .header__grafico{
+                
+                .header__imagen{
+                    width: 370px;
+                }
+            }
+
+            @include m.telefono {
+                display: flex;
+                flex-direction: column;
+            }
+            
+        }
+    }
+
+   
+
+    @include m.telefono {
+        background-size: 100px;
+    }
+    @include m.tablet {
+        background-size: 550px;
+    }
+    @include m.laptop {
+        background-size: 992px; 
+    }
+    @include m.desktop {
+        background-size: 1280px; 
+    }
+}
+
+
+

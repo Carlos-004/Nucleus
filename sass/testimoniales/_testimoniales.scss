@@ -1,0 +1,41 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+
+.testimoniales{
+    background-color: v.$morado;
+    margin-top: -1px;
+    padding: 40px;
+
+    .testimoniales__contenedor{
+        h2{
+            text-align: center;
+            color: v.$blanco;
+        }
+
+        .testimoniales__grid{
+            @include m.grid(20px,2,1);
+   
+            @include m.telefono{
+                display: flex;
+                flex-direction: column;
+            }
+            .testimonial{
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+                background-color: v.$blanco;
+                padding: 20px;
+                transition: transform 0.3s ease;
+                width: 100%;
+                &:hover{
+                    transform: scale(1.2);
+                }
+
+                .testimonial__autor{
+                    text-align: right;
+                    color: v.$morado;
+                    font-weight: 900;
+                }
+            }
+        }
+    }
+}

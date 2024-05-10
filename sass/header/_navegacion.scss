@@ -1,0 +1,25 @@
+@use "../base/variables" as v;
+@use "../base/mixins" as m;
+
+
+.navegacion{
+    .navegacion__link{
+        color: v.$blanco;
+        padding: 10px;
+        font-size: 16px;
+        &:hover{
+            background-color: v.$blanco-transparente;
+        }
+    }
+
+    @include m.telefono {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+
+        .navegacion__link{
+            color: v.$morado;
+        }
+    }
+}
